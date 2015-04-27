@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="545.0" prefWidth="873.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.calendarController">
+   <children>
+      <ComboBox fx:id="monthBox" layoutX="505.0" layoutY="132.0" onAction="#handleMonth" prefWidth="150.0" />
+      <ComboBox fx:id="dayBox" layoutX="505.0" layoutY="208.0" prefWidth="150.0" />
+      <ComboBox fx:id="yearBox" layoutX="505.0" layoutY="290.0" onAction="#handleYear" prefWidth="150.0" />
+      <Label layoutX="351.0" layoutY="137.0" text="Month" />
+      <Label layoutX="351.0" layoutY="213.0" text="Day" />
+      <Label layoutX="351.0" layoutY="295.0" text="Year" />
+   </children>
+</AnchorPane>

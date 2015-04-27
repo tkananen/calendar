@@ -7,14 +7,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
-public class calendarController   {	
+public class calendarController  extends Main {	
 	
 	@FXML
-	final ComboBox<String> monthBox = new ComboBox<String>();
+	ComboBox<String> monthBox = new ComboBox<String>();
 	@FXML
-	final ComboBox<String> dayBox = new ComboBox<String>();
+	ComboBox<String> dayBox = new ComboBox<String>();
 	@FXML
-	final ComboBox<String> yearBox = new ComboBox<String>();
+	ComboBox<String> yearBox = new ComboBox<String>();
+	
+	
 	private Main main;
 	
 		@FXML
@@ -52,18 +54,39 @@ public class calendarController   {
 		dayBox.setValue("25");
 		}
 		
+		
+		
+		
+			@FXML
+			public void handleYear(){
+				if(yearBox.getValue().toString().equals("2012") || yearBox.getValue().toString().equals("2016") ||yearBox.getValue().toString().equals("2020")){
+					if(monthBox.getValue().toString().equals("February")){
+						dayBox.getItems().clear();
+						dayBox.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
+		 						"20", "21", "22", "23", "24", "25", "26", "27", "28", "29");}
+					else{
+						dayBox.getItems().clear();
+						dayBox.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
+		 						"20", "21", "22", "23", "24", "25", "26", "27", "28");}
+					}
+					
+				}
+			
+		
 			
 			@FXML
-			private void handleMonth(){
+			public void handleMonth(){
 				if (monthBox.getValue().toString().equals("January")){
 	 				dayBox.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
 	 						"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31");}
 	 			
 	 			if (monthBox.getValue().toString().equals("February")){
 	 				if(yearBox.getValue().toString().equals("2012") || yearBox.getValue().toString().equals("2016")||yearBox.getValue().toString().equals("2020")){
-	 				dayBox.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
+	 					dayBox.getItems().clear();
+	 					dayBox.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
 	 						"20", "21", "22", "23", "24", "25", "26", "27", "28", "29");}
 	 				else{
+	 					dayBox.getItems().clear();
 	 					dayBox.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
 		 						"20", "21", "22", "23", "24", "25", "26", "27", "28");}
 	 				}	 			
